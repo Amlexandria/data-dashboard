@@ -270,14 +270,20 @@ function selectGeneration(value) {
 
             /******REQUERIMIENTO 3: CANTIDAD Y PORCENTAJE DE ESTUDIANTES EXITOSAS POR GENERACION *********/
             var arrOfSuccessfulStudentsPerGeneration = [];
+            var arrOfSuccessfulStudentsPerGenerationTech = [];
+            var arrOfSuccessfulStudentsPerGenerationHse = [];
 
             for (element of activeStudents) {
                 //console.log(element);
                 var sprints = element.sprints;
                 //console.log(sprints);
                 var seventyPercent = 3000 * sprints.length * .7;
+                var seventyPercentTech = 1800 * sprints.length * .7;
+                var seventyPercentHse = 1200 * sprints.length * .7;
                 console.log(seventyPercent);
 
+                var sumScoreTechAllSprints = 0;
+                var sumScoreHseAllSprints = 0;
                 var sumScoreOfAllSprints = 0;
 
                 for (obj of sprints) {
@@ -287,14 +293,24 @@ function selectGeneration(value) {
                     console.log(tech);
                     var hse = score.hse;
                     console.log(hse);
+                    sumScoreTechAllSprints += tech;
+                    console.log(sumScoreTechAllSprints);
+                    sumScoreHseAllSprints += hse;
+                    console.log(sumScoreHseAllSprints);
                     var scorePerSprint = tech + hse;
                     sumScoreOfAllSprints += scorePerSprint;
                     console.log(sumScoreOfAllSprints);
                     if (sumScoreOfAllSprints > seventyPercent) {
                         arrOfSuccessfulStudentsPerGeneration.push(element);
-                        console.log(arrOfSuccessfulStudentsPerGeneration);
-
+                        //console.log(arrOfSuccessfulStudentsPerGeneration);
                     };//cierra if
+                    if (sumScoreTechAllSprints > seventyPercentTech) {
+                        arrOfSuccessfulStudentsPerGenerationTech.push(element);
+                        //console.log(arrOfSuccessfulStudentsPerGenerationTech);
+                    };
+                    if (sumScoreHseAllSprints > seventyPercentHse) {
+                        arrOfSuccessfulStudentsPerGenerationHse.push(element);
+                    }
                 };//cierra for of sprints
             };//cierra for of activeStudents
             var boxStudents = document.getElementById('box-students');
@@ -317,7 +333,17 @@ function selectGeneration(value) {
             var percentageOfSuccessfulStudentsPerGeneration = numberOfSuccessfulStudentsPerGeneration/activeStudents.length*100;
                 console.log(percentageOfSuccessfulStudentsPerGeneration);
 
-                // var hundredPercent = activeStudents.length;
+            //CANTIDAD DE ESTUDIANTES EXITOSAS TECH
+            var numberOfSuccessfulStudentsTech = arrOfSuccessfulStudentsPerGenerationTech.length;
+            //PORCENTAJE
+            var percentageSuccesfulStudentsTech = numberOfSuccessfulStudentsTech/activeStudents.length*100;
+
+            //CANTIDAD DE ESTUDIANTES EXITOSAS HSE
+            var numberOfSuccessfulStudentsHse = arrOfSuccessfulStudentsPerGenerationHse.length;
+            //PORCENTAJE
+            var percentageSuccesfulStudentsHse = numberOfSuccessfulStudentsHse/activeStudents.length*100;
+
+
 
                 //CREANDO ELEMENTOS PARA MOSTRAR EN HTML  % ALUMNAS SATISFECHAS
                 var boxStudents3 = document.getElementById('box-students')
