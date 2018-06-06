@@ -266,8 +266,6 @@ function selectGeneration(value) {
             }
 
 
-
-
             /******REQUERIMIENTO 3: CANTIDAD Y PORCENTAJE DE ESTUDIANTES EXITOSAS POR GENERACION *********/
             var arrOfSuccessfulStudentsPerGeneration = [];
             var arrOfSuccessfulStudentsPerGenerationTech = [];
@@ -313,17 +311,19 @@ function selectGeneration(value) {
                     }
                 };//cierra for of sprints
             };//cierra for of activeStudents
-            var boxStudents = document.getElementById('box-students');
-                var boxSuccesfulStudents= document.getElementById('box-succesful-students');
-                var succesfulStudents = document.getElementById('succesful-students');
-                var totalNameStudents = document.createElement('p');
-                var textNames = document.createTextNode(arrOfSuccessfulStudentsPerGeneration.length);
 
-                // totalActive.appendChild(textActive.name);
-                totalNameStudents.appendChild(textNames );
-                succesfulStudents.appendChild(totalNameStudents);
-                boxSuccesfulStudents.appendChild(succesfulStudents);
-                boxStudents.appendChild(boxSuccesfulStudents);
+            //CREANDO ELEMENTOS PARA TOTAL DE ESTUDIANTES EXITOSAS POR GENERACION
+            var boxStudents = document.getElementById('box-students');
+            var boxSuccesfulStudents = document.getElementById('box-succesful-students');
+            var succesfulStudents = document.getElementById('succesful-students');
+            var totalNameStudents = document.createElement('p');
+            var textNames = document.createTextNode(arrOfSuccessfulStudentsPerGeneration.length);
+
+            // totalActive.appendChild(textActive.name);
+            totalNameStudents.appendChild(textNames);
+            succesfulStudents.appendChild(totalNameStudents);
+            boxSuccesfulStudents.appendChild(succesfulStudents);
+            boxStudents.appendChild(boxSuccesfulStudents);
 
             //CANTIDAD DE ESTUDIANTES EXITOSAS
             var numberOfSuccessfulStudentsPerGeneration = arrOfSuccessfulStudentsPerGeneration.length;
@@ -370,6 +370,18 @@ function selectGeneration(value) {
             nameStudents.appendChild(totalNameStudents);
             boxNameStudents.appendChild(nameStudents);
             boxStudents.appendChild(boxNameStudents);
+
+            //CREANDO ELEMENTOS PARA NOMBRE DE ESTUDIANTES INACTIVAS
+            var boxStudents4 = document.getElementById('box-students');
+            var boxNameInactivesStudents = document.getElementById('box-name-inactives-students');
+            var inactiveNameStudents = document.getElementById('inactive-name-students');
+            var totalNameInactiveStudents = document.createElement('p');
+            var textInactiveNames = document.createTextNode(arrNamesOfInactiveStudents);
+
+            totalNameInactiveStudents.appendChild(textInactiveNames);
+            inactiveNameStudents.appendChild(totalNameInactiveStudents);
+            boxNameInactivesStudents.appendChild(inactiveNameStudents);
+            boxStudents4.appendChild(boxNameInactivesStudents);
 
             /************************TRABAJANDO CON RATINGS*************************/
             /******REQUERIMIENTO 4: OBTENIENDO EL % DE ESTUDIANTES SATISFECHA POR GENERACION *********/

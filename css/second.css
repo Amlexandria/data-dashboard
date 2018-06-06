@@ -134,7 +134,6 @@ section > ul{
 }
 
 
-
 /******************RESULTADOS GENERALES POR SEDE************************/
 section#contain-total-sede{
     /* display: inline-block; */
@@ -251,6 +250,19 @@ section > p#general{
 
 #box-succesful-students {
   display: inline-block;
+  height: auto;
+  margin-top:1rem;
+  padding: 0.5rem;
+  text-align: center;
+  width:16rem;
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+  color: #34495E;
+  margin: .5rem;
+}
+
+#box-name-inactives-students{
+    display: inline-block;
   height: auto;
   margin-top:1rem;
   padding: 0.5rem;
