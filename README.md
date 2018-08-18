@@ -5,7 +5,7 @@
 * **Unidad:** _Producto final_
 
 ***
-
+![image](https://user-images.githubusercontent.com/37434578/44295080-58350100-a267-11e8-8437-4be0ad524abe.png)
 ## Sobre el producto
 ###### _Información inicial proporcionada por Laboratoria_
 
