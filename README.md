@@ -3,6 +3,7 @@
 * **Integrantes del equipo:** _Claudia Trujillo, Ambar de Alejandría_
 * **Curso:** _Creando tu primer sitio web interactivo_
 * **Unidad:** _Producto final_
+## Desarrollado para [Laboratoria](http://laboratoria.la)
 
 ***
 ![image](https://user-images.githubusercontent.com/37434578/44295080-58350100-a267-11e8-8437-4be0ad524abe.png)
